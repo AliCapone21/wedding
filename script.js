@@ -3,6 +3,32 @@ const countdownElement = document.getElementById('countdown');
 // Countdown Timer Functionality
 const countdownDate = new Date("April 13, 2025 17:00:00").getTime();
 
+// Background Music
+const audio = document.getElementById("bg-music");
+
+if (audio) {
+    audio.volume = 0.5; // Set volume to medium
+
+    document.addEventListener("DOMContentLoaded", () => {
+        audio.muted = false; // Unmute the audio
+        audio.play().catch(err => console.log("Autoplay blocked:", err));
+    });
+
+    // Mobile fix: Start music on the first tap
+    document.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+        }
+    }, { once: true });
+}
+
+// Force scroll to top when the page loads
+window.onload = () => {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+};
+
 // Update the countdown every second
 let countdownInterval = setInterval(function () {
     let now = new Date().getTime();
@@ -42,37 +68,27 @@ fadeElements.forEach(el => observer.observe(el));
 
 // Function to create sakura leaves with random rotation directions
 function createLeaf() {
-    // Create a new leaf element
     const leaf = document.createElement('div');
     leaf.classList.add('sakura-leaf');
     
-    // Position the leaf randomly at the top of the page
-    const leafPositionX = Math.random() * window.innerWidth; // Random position from left to right
-    const leafPositionY = -40; // Start position (above the page)
-
-    // Apply the position to the leaf
+    const leafPositionX = Math.random() * window.innerWidth;
+    const leafPositionY = -40;
+    
     leaf.style.left = `${leafPositionX}px`;
     leaf.style.top = `${leafPositionY}px`;
 
-    // Random rotation value (between -360 to 360 degrees)
-    const rotationValue = (Math.random() * 720 - 360).toFixed(2); // Random rotate from -360deg to 360deg
-    leaf.style.transform = `rotate(${rotationValue}deg)`;  // Apply random rotation
+    const rotationValue = (Math.random() * 720 - 360).toFixed(2);
+    leaf.style.transform = `rotate(${rotationValue}deg)`;
 
-    // Set a random animation duration to make each leaf fall at different speeds
-    const animationDuration = Math.random() * (8 - 5) + 5; // between 5s and 8s
+    const animationDuration = Math.random() * (8 - 5) + 5;
     leaf.style.animationDuration = `${animationDuration}s`;
 
-    // Add the leaf to the body
     document.body.appendChild(leaf);
     
-    // Remove the leaf after it falls off the screen (after animation duration)
     setTimeout(() => {
         leaf.remove();
     }, animationDuration * 1000);
 }
 
-// Create a new leaf every 200ms (you can adjust this timing for more or fewer leaves)
+// Create a new leaf every 200ms
 setInterval(createLeaf, 200);
-
-// Force scroll to top when the page loads
-window.onload = () => window.scrollTo(0, 0);
