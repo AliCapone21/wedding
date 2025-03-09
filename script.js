@@ -1,48 +1,31 @@
 const countdownElement = document.getElementById('countdown');
 
-window.onload = function() {
-    window.scrollTo(0, 0);
-  };
+// Countdown Timer Functionality
+const countdownDate = new Date("April 13, 2025 17:00:00").getTime();
 
-function updateCountdown() {
-    const weddingDate = new Date('2025-04-13T17:00:00'); // Corrected wedding date
-    const now = new Date();
-    const difference = weddingDate - now;
+// Update the countdown every second
+let countdownInterval = setInterval(function () {
+    let now = new Date().getTime();
+    let distance = countdownDate - now;
 
-    if (difference <= 0) {
-        document.getElementById("countdown").innerHTML = "🎉 The big day is here! 🎉";
-        clearInterval(interval);
-        return;
+    // Time calculations for days, hours, minutes, and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "The Day Has Come!";
     }
-
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML = `
-        <div class="time-box">
-            <div class="time-number">${days}</div>
-            <div class="time-label">ДНЕЙ</div>
-        </div>
-        <div class="time-box">
-            <div class="time-number">${hours}</div>
-            <div class="time-label">ЧАСОВ</div>
-        </div>
-        <div class="time-box">
-            <div class="time-number">${minutes}</div>
-            <div class="time-label">МИНУТ</div>
-        </div>
-        <div class="time-box">
-            <div class="time-number">${seconds}</div>
-            <div class="time-label">СЕКУНД</div>
-        </div>`;
-}
-
-// Run countdown every second
-const interval = setInterval(updateCountdown, 1000);
-updateCountdown();
-
+}, 1000);
 
 // Intersection Observer for fade-in effect
 const fadeElements = document.querySelectorAll('.fade-in');
@@ -57,8 +40,7 @@ const observer = new IntersectionObserver(entries => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-
-// Function to create sakura leaves
+// Function to create sakura leaves with random rotation directions
 function createLeaf() {
     // Create a new leaf element
     const leaf = document.createElement('div');
@@ -71,11 +53,15 @@ function createLeaf() {
     // Apply the position to the leaf
     leaf.style.left = `${leafPositionX}px`;
     leaf.style.top = `${leafPositionY}px`;
-    
+
+    // Random rotation value (between -360 to 360 degrees)
+    const rotationValue = (Math.random() * 720 - 360).toFixed(2); // Random rotate from -360deg to 360deg
+    leaf.style.transform = `rotate(${rotationValue}deg)`;  // Apply random rotation
+
     // Set a random animation duration to make each leaf fall at different speeds
     const animationDuration = Math.random() * (8 - 5) + 5; // between 5s and 8s
     leaf.style.animationDuration = `${animationDuration}s`;
-    
+
     // Add the leaf to the body
     document.body.appendChild(leaf);
     
@@ -87,3 +73,6 @@ function createLeaf() {
 
 // Create a new leaf every 200ms (you can adjust this timing for more or fewer leaves)
 setInterval(createLeaf, 200);
+
+// Force scroll to top when the page loads
+window.onload = () => window.scrollTo(0, 0);
