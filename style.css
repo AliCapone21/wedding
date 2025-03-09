@@ -1,0 +1,328 @@
+html {
+    scroll-behavior: smooth; /* Smooth scrolling across browsers */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Marck Script', cursive;
+    background-image: url('images/12345.png');
+    background-repeat: repeat-y; /* Repeats the pattern vertically */
+    background-position: center;
+    background-size: 800px 1850px; /* Keeps the original quality */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* To prevent horizontal scrolling */
+}
+
+
+.container {
+    position: relative; /* Important: Allows absolute positioning inside */
+    max-width: 300px;
+    width: 330px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+.couple-img {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+.countdown {
+    font-size: 40px;
+    font-weight: 600;
+    color: #8B0000;
+    margin-top: 20px;
+}
+
+.message {
+    font-size: 22px;
+    font-family: 'Marck Script', cursive;
+    color: #0f0f0f;
+    padding: 10px;
+    line-height: 35px;
+}
+
+.details {
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+    margin: 0px auto;
+    max-width: 500px; /* Keeps it neat */
+    padding: 20px;
+
+}
+
+.details a {
+    display: block;
+    font-weight: bold;
+    color: #8B0000;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.details a:hover {
+    text-decoration: underline;
+}
+
+.time {
+    font-size: 50px;
+    font-weight: 700;
+    color: #b22222;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.calendar {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Marck Script', cursive;
+    margin: 10px 0;
+    text-align: center;
+    color: #0f0f0f;
+  
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.time-box {
+    text-align: center;
+}
+
+.time-number {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.time-label {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.numbers {
+    text-align: center;
+    margin: auto;
+}
+/* Initial hidden state */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When element comes into view */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
+
+.highlight {
+    background-color: rgb(192, 34, 34);
+    color: white;
+    border-radius: 15px;
+}
+
+
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
+
+/* Styling for the typing effect */
+.typing-text {
+    display: inline-block;
+    border-right: 3px solid black; /* Cursor effect */
+    font-size: 50px;
+    font-family: 'Marck Script', cursive; /* Brush-style font */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: blinkCursor 0.8s infinite;
+}
+
+.location123 {
+    display: flex;
+    justify-content: center;
+}
+.wassup {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Falling Sakura Leaves */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg); /* Start slightly above the screen */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg); /* Fall to the bottom */
+        opacity: 0; /* Fade out at the bottom */
+    }
+}
+
+/* Sakura Leaf Styling */
+.sakura-leaf {
+    position: fixed; /* Use fixed positioning relative to the viewport */
+    width: 40px;  /* Adjust size */
+    height: 40px;
+    background-image: url('images/sakura-leaf.png');  /* Replace with your leaf image */
+    background-size: cover;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    z-index: -1;  /* Ensure it's behind other elements */
+}
+
+
+
+
+.header1, .header2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #0f0f0f;
+    display: inline-block;
+}
+
+.header2 {
+    color: #0f0f0f;
+   
+}
+
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1); /* Slightly enlarge */
+    }
+    50% {
+        transform: scale(1); /* Return to normal */
+    }
+    75% {
+        transform: scale(1.1); /* Slightly enlarge again */
+    }
+    100% {
+        transform: scale(1); /* Return to normal */
+    }
+}
+
+.infinity {
+    margin-top: 15px;
+    width: 80px;
+    height: 50px;
+    animation: heartbeat 3s ease-in-out infinite; /* Apply heartbeat animation */
+}
+
+
+/* Footer Section Inside Container */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Space between icons */
+    padding: 10px 0;  /* Padding around the icons */
+    background-color: black;  /* Black background for footer */
+    margin-top: 20px;  /* Add space between the details and footer */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 30px;  /* Icon size */
+    height: 30px;
+    border-radius: 50%;  /* Makes the icons round */
+    background-color: #fff;  /* White background for icons */
+    padding: 10px;
+    transition: transform 0.3s ease;  /* Smooth hover effect */
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);  /* Slightly enlarge the icon on hover */
+}
+
+.social-icon:active {
+    transform: scale(0.9);  /* Shrink icon when clicked */
+}
+
+
+
+
+@media screen and (min-width: 1025px) {  /* Desktop screens */
+    #countdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Reduce spacing */
+        font-size: 25px; /* Make it smaller */
+    }
+
+    .time-number {
+        font-size: 60px; /* Smaller numbers */
+    }
+
+    .time-label {
+        font-size: 20px; /* Smaller labels */
+    }
+}
+
+
+@media screen and (max-width: 768px) {  /* Mobile */
+    .container {
+        max-width: 95%;
+      
+    }
+   
+    .message {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .time {
+        font-size: 60px;
+     
+        
+    }
+    .countdown {
+        font-size: 30px;
+    }
+    .time-number {
+        font-size: 30px;
+    }
+    .time-label {
+        font-size: 18px;
+    }
+}
