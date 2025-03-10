@@ -1,7 +1,11 @@
-const countdownElement = document.getElementById('countdown');
+const countdownElement = document.getElementById("countdown");
 
-// Countdown Timer Functionality
-const countdownDate = new Date("April 13, 2025 17:00:00").getTime();
+// Countdown Timer Functionality in Uzbekistan Time (UTC+5)
+function getUzbekistanTime() {
+    return new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tashkent" })).getTime();
+}
+
+const countdownDate = new Date("April 13, 2025 17:00:00 GMT+5").getTime();
 
 // Background Music
 const audio = document.getElementById("bg-music");
@@ -29,9 +33,9 @@ window.onload = () => {
     }, 100);
 };
 
-// Update the countdown every second
+// Update the countdown every second using Uzbekistan time
 let countdownInterval = setInterval(function () {
-    let now = new Date().getTime();
+    let now = getUzbekistanTime();
     let distance = countdownDate - now;
 
     // Time calculations for days, hours, minutes, and seconds
@@ -49,17 +53,17 @@ let countdownInterval = setInterval(function () {
     // If the countdown is over, display a message
     if (distance < 0) {
         clearInterval(countdownInterval);
-        document.getElementById("countdown").innerHTML = "The Day Has Come!";
+        document.getElementById("countdown").innerHTML = "Счастливой семейной жизни!";
     }
 }, 1000);
 
 // Intersection Observer for fade-in effect
-const fadeElements = document.querySelectorAll('.fade-in');
+const fadeElements = document.querySelectorAll(".fade-in");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show'); // Add class to trigger animation
+            entry.target.classList.add("show"); // Add class to trigger animation
         }
     });
 }, { threshold: 0.2 }); // 20% of the element must be visible
@@ -68,12 +72,12 @@ fadeElements.forEach(el => observer.observe(el));
 
 // Function to create sakura leaves with random rotation directions
 function createLeaf() {
-    const leaf = document.createElement('div');
-    leaf.classList.add('sakura-leaf');
-    
+    const leaf = document.createElement("div");
+    leaf.classList.add("sakura-leaf");
+
     const leafPositionX = Math.random() * window.innerWidth;
     const leafPositionY = -40;
-    
+
     leaf.style.left = `${leafPositionX}px`;
     leaf.style.top = `${leafPositionY}px`;
 
@@ -84,7 +88,7 @@ function createLeaf() {
     leaf.style.animationDuration = `${animationDuration}s`;
 
     document.body.appendChild(leaf);
-    
+
     setTimeout(() => {
         leaf.remove();
     }, animationDuration * 1000);

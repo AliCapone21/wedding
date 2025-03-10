@@ -229,10 +229,8 @@ body {
 .footer-container {
     display: flex;
     justify-content: center;
-    gap: 30px;  /* Space between icons */
-    padding: 10px 0;  /* Padding around the icons */
-    background-color: black;  /* Black background for footer */
-    margin-top: 20px;  /* Add space between the details and footer */
+    color: white;
+    background-color: black;  
 }
 
 .social-icon {
