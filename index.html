@@ -1,120 +1,697 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Open Graph Meta Tags for Telegram and Social Media Previews -->
-    <meta property="og:title" content="Свадебное приглашение - Улугбек & Нозимахон">
-    <meta property="og:description" content="Присоединяйтесь к нам на особое свадебное торжество 13 апреля 2025 года. Сохраните дату!">
-    <meta property="og:image" content="https://wedding-five-flax.vercel.app/images/infinity-symbol.png"> <!-- Use the image URL from your assets -->
-    <meta property="og:url" content="https://wedding-five-flax.vercel.app"> <!-- Replace with your Vercel URL -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#f7f1ea">
+
+    <!-- Basic SEO -->
+    <meta
+        name="description"
+        content="Xurshid va Madinaning nikoh to‘yiga taklifnoma. 16-avgust 2026, soat 19:00."
+    >
+
+    <!-- Open Graph: Telegram, WhatsApp and Social Media -->
+    <meta
+        property="og:title"
+        content="Xurshid & Madina — Wedding Invitation"
+    >
+
+    <meta
+        property="og:description"
+        content="Sizni 2026-yil 16-avgust kuni bo‘lib o‘tadigan nikoh to‘yimizga taklif qilamiz."
+    >
+
+    <meta
+        property="og:image"
+        content="https://wedding-five-flax.vercel.app/images/infinity-symbol.png"
+    >
+
+    <meta
+        property="og:url"
+        content="https://wedding-five-flax.vercel.app"
+    >
+
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU"> <!-- Set locale to Russian -->
+    <meta property="og:locale" content="uz_UZ">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="Xurshid & Madina">
 
-    <!-- Twitter Card Meta Tags (Optional) -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://wedding-five-flax.vercel.app/images/infinity-symbol.png"> <!-- Replace with actual image URL -->
 
-    <title>Свадебное приглашение</title>
+    <meta
+        name="twitter:title"
+        content="Xurshid & Madina — Wedding Invitation"
+    >
+
+    <meta
+        name="twitter:description"
+        content="16 August 2026 at 19:00 — Guliston, Yangi Zomin Wedding Hall."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://wedding-five-flax.vercel.app/images/infinity-symbol.png"
+    >
+
+    <title>Xurshid & Madina | Wedding Invitation</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="./images/infinity-symbol.png"
+    >
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Marck+Script&display=swap" rel="stylesheet">
-    
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marck+Script&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <audio id="bg-music" loop autoplay muted>
-        <source src="music/idea-10-203609.mp3" type="audio/mp3">
+
+    <!-- Background music -->
+    <audio id="bg-music" loop preload="auto">
+        <source
+            src="./music/idea-10-203609.mp3"
+            type="audio/mpeg"
+        >
     </audio>
-    
-    <div class="container">
-        <div class="header fade-in">
-            <div class="header2">Улугбек</div>
-            <div><img class="infinity" src="./images/infinity-symbol.png" alt="#infinity"></div>
-            <div class="header1">Нозимахон</div>
-        </div>
-        <img class="couple-img fade-in" src="images/jjj.png" alt="Couple">
 
-        <div class="message fade-in">
-            <h3>Дорогие гости</h3>
-            -Мы очень хотим сделать этот <br>
-            -праздник особенным, поэтому <br>
-            -приглашаем вас разделить с нами <br>
-            -этот важный для нас день <br>
-            -день нашей свадьбы!
-            <h3>С любовью</h3>
-            <h3>Улугбек и Нозимахон</h3>
-        </div>
+    <!-- Decorative background -->
+    <div class="page-background" aria-hidden="true">
+        <span class="background-decoration decoration-one"></span>
+        <span class="background-decoration decoration-two"></span>
+        <span class="background-decoration decoration-three"></span>
+    </div>
 
-        <img class="couple-img fade-in" src="images/wedding2.png" alt="Couple">
+    <div class="page-wrapper">
 
-        <div class="countdown fade-in" id="countdown">
-            <div class="countdown-item">
-                <span id="days">0</span>
-                <p>Дни</p> 
+        <!-- Top navigation -->
+        <nav class="top-navigation" aria-label="Website controls">
+
+            <!-- Language switcher -->
+            <div
+                class="language-switcher"
+                role="group"
+                aria-label="Choose language"
+            >
+                <button
+                    class="language-button active"
+                    type="button"
+                    data-lang="uz"
+                    aria-pressed="true"
+                >
+                    UZB
+                </button>
+
+                <span class="language-divider" aria-hidden="true"></span>
+
+                <button
+                    class="language-button"
+                    type="button"
+                    data-lang="en"
+                    aria-pressed="false"
+                >
+                    ENG
+                </button>
             </div>
-            <div class="countdown-item">
-                <span id="hours">0</span>
-                <p>Часы</p> 
-            </div>
-            <div class="countdown-item">
-                <span id="minutes">0</span>
-                <p>Минуты</p> 
-            </div>
-            <div class="countdown-item">
-                <span id="seconds">0</span>
-                <p>Секунды</p> 
-            </div>
-        </div>        
 
-        <div class="details fade-in">
-            <div class="time fade-in">17:00</div>
-            <div class="calendar fade-in">
-                <h2>Апрель</h2>
-                <table class="numbers fade-in">
-                    <tr>
-                        <th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
-                    </tr>
-                    <tr>
-                        <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
-                    </tr>
-                    <tr>
-                        <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td class="highlight">13</td>
-                    </tr>
-                    <tr>
-                        <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
-                    </tr>
-                    <tr>
-                        <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
-                    </tr>
-                    <tr>
-                        <td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
-                    </tr>                                       
-                </table>
-            </div>
-        </div>
+            <!-- Music control -->
+            <button
+                class="music-button"
+                id="music-button"
+                type="button"
+                aria-label="Musiqani yoqish"
+                data-aria-uz="Musiqani yoqish"
+                data-aria-en="Play music"
+            >
+                <span class="music-icon" aria-hidden="true">♫</span>
 
-        <img class="couple-img fade-in" src="images/wedding1.png" alt="Couple">
+                <span
+                    class="music-button-text"
+                    data-uz="Musiqa"
+                    data-en="Music"
+                >
+                    Musiqa
+                </span>
+            </button>
 
-        <div class="details fade-in">
-            <h3><strong>Свадебный зал <br> Kulol Nur</strong></h3>
-            <div class="location123">
-                <a class="jerry" href="https://maps.app.goo.gl/RPnLxByFpKRH6qDW8" target="_blank">
-                    <img class="wassup" src="./images/location-pin.png" alt="">Локация</a>
-            </div>
-        </div>
+        </nav>
 
-        <div class="footer-container">
-            <h2><strong>С радостью ждём вас!</strong></h2>
-        </div>
+        <main class="container">
+
+            <!-- Hero section -->
+            <section class="hero-section">
+
+                <div class="hero-eyebrow fade-in">
+                    <span
+                        data-uz="Nikoh to‘yiga taklifnoma"
+                        data-en="Wedding invitation"
+                    >
+                        Nikoh to‘yiga taklifnoma
+                    </span>
+                </div>
+
+                <header class="couple-header fade-in">
+
+                    <h1 class="couple-names">
+                        <span class="partner-name partner-name-first">
+                            Xurshid
+                        </span>
+
+                        <span class="infinity-wrapper">
+                            <img
+                                class="infinity"
+                                src="./images/infinity-symbol.png"
+                                alt="Infinity symbol"
+                            >
+                        </span>
+
+                        <span class="partner-name partner-name-second">
+                            Madina
+                        </span>
+                    </h1>
+
+                    <p
+                        class="save-the-date"
+                        data-uz="Baxtli kunimizni biz bilan birga nishonlang"
+                        data-en="Celebrate our special day with us"
+                    >
+                        Baxtli kunimizni biz bilan birga nishonlang
+                    </p>
+
+                </header>
+
+                <figure class="image-wrapper hero-image-wrapper fade-in">
+                    <img
+                        class="couple-img hero-image"
+                        src="./images/jjj.png"
+                        alt="Xurshid and Madina wedding invitation"
+                        loading="eager"
+                    >
+
+                    <div
+                        class="image-overlay"
+                        aria-hidden="true"
+                    ></div>
+                </figure>
+
+            </section>
+
+            <!-- Invitation message -->
+            <section class="invitation-section section-card fade-in">
+
+                <div class="section-ornament" aria-hidden="true">
+                    <span></span>
+                    <span class="ornament-symbol">♡</span>
+                    <span></span>
+                </div>
+
+                <h2
+                    class="section-title script-title"
+                    data-uz="Aziz mehmonlar"
+                    data-en="Dear guests"
+                >
+                    Aziz mehmonlar
+                </h2>
+
+                <p
+                    class="invitation-text"
+                    data-uz="Hayotimizdagi eng unutilmas va quvonchli kunlardan birini siz bilan baham ko‘rishni istaymiz. Sizni nikoh to‘yimizga chin qalbimizdan taklif qilamiz."
+                    data-en="We would love to share one of the happiest and most unforgettable days of our lives with you. It is our pleasure to invite you to our wedding celebration."
+                >
+                    Hayotimizdagi eng unutilmas va quvonchli kunlardan
+                    birini siz bilan baham ko‘rishni istaymiz. Sizni
+                    nikoh to‘yimizga chin qalbimizdan taklif qilamiz.
+                </p>
+
+                <div class="invitation-signature">
+
+                    <span
+                        class="signature-label"
+                        data-uz="Hurmat va muhabbat bilan"
+                        data-en="With love"
+                    >
+                        Hurmat va muhabbat bilan
+                    </span>
+
+                    <strong class="signature-names">
+                        Xurshid &amp; Madina
+                    </strong>
+
+                </div>
+
+            </section>
+
+            <!-- Second image -->
+            <figure class="image-wrapper fade-in">
+                <img
+                    class="couple-img"
+                    src="./images/wedding2.png"
+                    alt="Wedding celebration"
+                    loading="lazy"
+                >
+
+                <div
+                    class="image-overlay"
+                    aria-hidden="true"
+                ></div>
+            </figure>
+
+            <!-- Event date -->
+            <section class="event-date-section fade-in">
+
+                <p
+                    class="event-date-label"
+                    data-uz="Sana"
+                    data-en="Save the date"
+                >
+                    Sana
+                </p>
+
+                <time
+                    class="event-date"
+                    datetime="2026-08-16T19:00:00+05:00"
+                >
+                    <span class="event-day">16</span>
+
+                    <span
+                        class="event-month"
+                        data-uz="Avgust"
+                        data-en="August"
+                    >
+                        Avgust
+                    </span>
+
+                    <span class="event-year">2026</span>
+                </time>
+
+                <div class="event-time">
+                    <span class="time-icon" aria-hidden="true">◷</span>
+
+                    <span>19:00</span>
+
+                    <span
+                        class="timezone"
+                        data-uz="O‘zbekiston vaqti"
+                        data-en="Uzbekistan time"
+                    >
+                        O‘zbekiston vaqti
+                    </span>
+                </div>
+
+            </section>
+
+            <!-- Countdown -->
+            <section
+                class="countdown-section fade-in"
+                aria-labelledby="countdown-title"
+            >
+
+                <h2
+                    class="countdown-title"
+                    id="countdown-title"
+                    data-uz="To‘yimizgacha"
+                    data-en="Until our wedding"
+                >
+                    To‘yimizgacha
+                </h2>
+
+                <div
+                    class="countdown"
+                    id="countdown"
+                    aria-live="polite"
+                >
+
+                    <div class="countdown-item">
+                        <span
+                            class="countdown-number"
+                            id="days"
+                        >
+                            0
+                        </span>
+
+                        <p
+                            data-uz="Kun"
+                            data-en="Days"
+                        >
+                            Kun
+                        </p>
+                    </div>
+
+                    <div class="countdown-separator" aria-hidden="true">
+                        :
+                    </div>
+
+                    <div class="countdown-item">
+                        <span
+                            class="countdown-number"
+                            id="hours"
+                        >
+                            0
+                        </span>
+
+                        <p
+                            data-uz="Soat"
+                            data-en="Hours"
+                        >
+                            Soat
+                        </p>
+                    </div>
+
+                    <div class="countdown-separator" aria-hidden="true">
+                        :
+                    </div>
+
+                    <div class="countdown-item">
+                        <span
+                            class="countdown-number"
+                            id="minutes"
+                        >
+                            0
+                        </span>
+
+                        <p
+                            data-uz="Daqiqa"
+                            data-en="Minutes"
+                        >
+                            Daqiqa
+                        </p>
+                    </div>
+
+                    <div class="countdown-separator" aria-hidden="true">
+                        :
+                    </div>
+
+                    <div class="countdown-item">
+                        <span
+                            class="countdown-number"
+                            id="seconds"
+                        >
+                            0
+                        </span>
+
+                        <p
+                            data-uz="Soniya"
+                            data-en="Seconds"
+                        >
+                            Soniya
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Calendar -->
+            <section class="calendar-section section-card fade-in">
+
+                <div class="calendar-heading">
+
+                    <span
+                        class="calendar-small-title"
+                        data-uz="To‘y kuni"
+                        data-en="Wedding day"
+                    >
+                        To‘y kuni
+                    </span>
+
+                    <h2
+                        data-uz="Avgust 2026"
+                        data-en="August 2026"
+                    >
+                        Avgust 2026
+                    </h2>
+
+                </div>
+
+                <div class="calendar-wrapper">
+
+                    <table class="calendar-table">
+
+                        <thead>
+                            <tr>
+                                <th
+                                    scope="col"
+                                    data-uz="Du"
+                                    data-en="Mon"
+                                >
+                                    Du
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Se"
+                                    data-en="Tue"
+                                >
+                                    Se
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Cho"
+                                    data-en="Wed"
+                                >
+                                    Cho
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Pa"
+                                    data-en="Thu"
+                                >
+                                    Pa
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Ju"
+                                    data-en="Fri"
+                                >
+                                    Ju
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Sha"
+                                    data-en="Sat"
+                                >
+                                    Sha
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    data-uz="Ya"
+                                    data-en="Sun"
+                                >
+                                    Ya
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+
+                                <td class="highlight">
+                                    <span>16</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                            </tr>
+
+                            <tr>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                            </tr>
+
+                            <tr>
+                                <td>31</td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                                <td class="calendar-empty"></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- Third image -->
+            <figure class="image-wrapper fade-in">
+                <img
+                    class="couple-img"
+                    src="./images/wedding1.png"
+                    alt="Wedding ceremony"
+                    loading="lazy"
+                >
+
+                <div
+                    class="image-overlay"
+                    aria-hidden="true"
+                ></div>
+            </figure>
+
+            <!-- Location -->
+            <section class="location-section section-card fade-in">
+
+                <div class="location-icon-wrapper">
+                    <img
+                        class="location-icon"
+                        src="./images/location-pin.png"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                </div>
+
+                <p
+                    class="location-label"
+                    data-uz="Manzil"
+                    data-en="Location"
+                >
+                    Manzil
+                </p>
+
+                <h2
+                    class="location-title"
+                    data-uz="Yangi Zomin to‘yxonasi"
+                    data-en="Yangi Zomin Wedding Hall"
+                >
+                    Yangi Zomin to‘yxonasi
+                </h2>
+
+                <p
+                    class="location-address"
+                    data-uz="Guliston shahri"
+                    data-en="Guliston city"
+                >
+                    Guliston shahri
+                </p>
+
+                <!--
+                    Location URL will be added later.
+                    Replace # inside href when the final map link is ready.
+                -->
+                <a
+                    class="location-button location-button-disabled"
+                    id="location-link"
+                    href="#"
+                    aria-disabled="true"
+                    data-link-pending="true"
+                >
+                    <img
+                        src="./images/location-pin.png"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span
+                        data-uz="Lokatsiya tez orada"
+                        data-en="Location coming soon"
+                    >
+                        Lokatsiya tez orada
+                    </span>
+                </a>
+
+            </section>
+
+            <!-- Final message -->
+            <footer class="footer-container fade-in">
+
+                <div class="footer-ornament" aria-hidden="true">
+                    ♡
+                </div>
+
+                <h2
+                    data-uz="Sizni quvonch bilan kutamiz!"
+                    data-en="We look forward to celebrating with you!"
+                >
+                    Sizni quvonch bilan kutamiz!
+                </h2>
+
+                <p class="footer-names">
+                    Xurshid &amp; Madina
+                </p>
+
+                <time
+                    class="footer-date"
+                    datetime="2026-08-16"
+                >
+                    16.08.2026
+                </time>
+
+            </footer>
+
+        </main>
 
     </div>
 
-    <script src="./script.js"></script>
-
+    <script src="./script.js" defer></script>
 
 </body>
 
