@@ -1283,10 +1283,11 @@ a {
    Sakura leaves
 ------------------------- */
 
+/* Sakura leaves — always visible above the website */
 .sakura-leaf {
     position: fixed;
     top: -60px;
-    z-index: 1;
+    z-index: 9999;
 
     width: 27px;
     height: 27px;
@@ -1296,14 +1297,17 @@ a {
     background-position: center;
     background-size: contain;
 
-    opacity: 0.55;
+    opacity: 0.7;
+
     pointer-events: none;
+    user-select: none;
 
     animation-name: sakuraFall;
     animation-timing-function: linear;
     animation-iteration-count: 1;
-}
 
+    will-change: transform, opacity;
+}
 
 /* -------------------------
    Keyboard accessibility
@@ -1358,30 +1362,40 @@ a {
 @keyframes sakuraFall {
     0% {
         transform:
-            translate3d(0, -60px, 0)
+            translate3d(0, -70px, 0)
             rotate(0deg);
 
         opacity: 0;
     }
 
     10% {
-        opacity: 0.65;
+        opacity: 0.75;
     }
 
-    50% {
+    30% {
         transform:
-            translate3d(45px, 50vh, 0)
-            rotate(180deg);
+            translate3d(35px, 30vh, 0)
+            rotate(120deg);
     }
 
-    90% {
-        opacity: 0.45;
+    55% {
+        transform:
+            translate3d(-25px, 58vh, 0)
+            rotate(240deg);
+    }
+
+    80% {
+        transform:
+            translate3d(30px, 85vh, 0)
+            rotate(330deg);
+
+        opacity: 0.65;
     }
 
     100% {
         transform:
-            translate3d(-25px, 110vh, 0)
-            rotate(380deg);
+            translate3d(-20px, 110vh, 0)
+            rotate(430deg);
 
         opacity: 0;
     }
